@@ -29,6 +29,7 @@ function FormFieldsContainer({ currentField }) {
     dispatch(addDragOver(currentField));
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     dispatch(getRequired({ id: currentField.id, required: checked }));
   }, [checked]);
@@ -39,8 +40,7 @@ function FormFieldsContainer({ currentField }) {
       draggable
       onDragStart={pickDragField}
       onDragEnd={handleDragEnd}
-      onDragOver={handleDragOver}
-    >
+      onDragOver={handleDragOver}>
       <div className="formFieldSets">
         <FormFieldSet currentField={currentField} />
         {!currentField.outPutType && (

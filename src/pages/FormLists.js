@@ -9,6 +9,7 @@ function FormLists() {
   const isLoginOpen = useSelector((state) => state.isLoginOpen);
   const dispatch = useDispatch();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     dispatch(clearForm());
     dispatch(hideFormActions());

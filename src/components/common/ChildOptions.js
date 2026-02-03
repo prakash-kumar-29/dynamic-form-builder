@@ -17,6 +17,7 @@ function ChildOptions({ childId, childName, parentId, valid }) {
     setIsValid(Boolean(value));
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     dispatch(addOptionValue({ value: optionValue, parent: parentId, child: childId, valid: isValid }));
   }, [optionValue]);

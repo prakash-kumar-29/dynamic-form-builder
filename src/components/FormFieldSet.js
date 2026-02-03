@@ -11,6 +11,7 @@ function FormFieldSet({ currentField }) {
   const fieldId = currentField.id;
   const isValid = currentField?.valid;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (currentField?.outPutType) {
       dispatch(changeSource({ urlFile: inputValue, id: fieldId }));
