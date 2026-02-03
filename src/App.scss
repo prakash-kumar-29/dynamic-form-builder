@@ -1,0 +1,416 @@
+$lightGreen: #20b2aa;
+$formColor: #7fffd4;
+$white: #fff;
+$errorColor: #ff0000;
+$darkBlue: #000080;
+
+@mixin flex($justify, $allign) {
+  display: flex;
+  @if ($justify) {
+    justify-content: $justify;
+  }
+  @if ($allign) {
+    align-items: $allign;
+  }
+}
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+.appHeader {
+  @include flex(space-between, center);
+  padding: 1.2rem;
+  height: 2.5rem;
+  background-color: $formColor;
+}
+.appHeaderTitle {
+  margin: 0 0.5rem;
+}
+.headerButtons {
+  @include flex(space-evenly, center);
+  width: 15rem;
+}
+.appButton {
+  width: 8rem;
+  background-color: #000;
+  color: $white;
+  text-align: center;
+  padding: 8px 20px;
+  margin: 0 5px 0 0;
+  font-size: 1.3rem;
+  border: 0;
+  border-radius: 5px;
+}
+.headerIcon {
+  @include size(auto, auto);
+  font-size: 1.7rem;
+  padding: 2px 5px;
+  color: $white;
+  background-color: $lightGreen;
+  border-radius: 3px;
+  border: 0;
+}
+.darkBlue {
+  background-color: $darkBlue;
+}
+.red {
+  background-color: $errorColor;
+}
+.formLists {
+  display: flex;
+  flex-wrap: wrap;
+}
+.createFormContainer {
+  position: absolute;
+  @include size(100%, 100%);
+  margin: 0;
+  padding: 0;
+  top: 0;
+  @include flex(center, center);
+  background-color: #04040466;
+}
+.createFormModal {
+  position: relative;
+  width: 35%;
+  background-color: $formColor;
+  padding: 2rem;
+  opacity: 1;
+}
+.fieldSets {
+  border: 0;
+  padding: 0 0 10px 0;
+  margin: 2rem 0;
+}
+.formInputs {
+  border: 0;
+  margin: 10px 0;
+  @include size(17rem, 1.5rem);
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid;
+}
+.formInputs:focus {
+  border-bottom: 1px solid;
+  outline: 0;
+}
+.textArea {
+  height: 5rem;
+}
+.lightBlue {
+  background-color: $lightGreen;
+}
+.dynamicFormContainer {
+  background-color: $lightGreen;
+  height: 89.2vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.formName {
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  width: 100%;
+  @include flex(center, center);
+  height: 3rem;
+}
+.templateContainer {
+  height: 31rem;
+  width: 17rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 3rem 3rem 1rem 5rem;
+}
+.templateContainer::-webkit-scrollbar {
+  width: 8px;
+}
+.templateContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px #808080;
+}
+.templateContainer::-webkit-scrollbar-thumb {
+  background-color: #d4d1d1;
+  border-radius: 10px;
+}
+.templateFields {
+  @include size(12rem, 2.5rem);
+  margin: 1rem 0 0 0;
+  padding: 5px 2rem;
+  background-color: $white;
+  @include flex(space-between, center);
+  border-radius: 5px;
+}
+.templateTexts {
+  font-size: 1.2rem;
+}
+.templateIcons {
+  font-size: 1.5rem;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+.mainFormContainer {
+  @include size(45rem, 32rem);
+  margin: 3rem 1rem 1rem;
+  background-color: $formColor;
+  color: #00008b;
+  @include flex("", center);
+  flex-direction: column;
+  overflow: auto;
+  padding: 1rem;
+}
+.mainFormContainer::-webkit-scrollbar {
+  width: 10px;
+}
+.mainFormContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px #5f5f5f;
+  border-radius: 10px;
+}
+.mainFormContainer::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #9aaa79;
+}
+.newFieldsContainer {
+  margin: 0 0 15px 0;
+}
+.formFieldSets {
+  @include flex(space-between, center);
+  width: 28rem;
+}
+.newFieldSets {
+  border: 0;
+  margin: 0;
+  padding: 0 0 10px 0;
+  position: relative;
+}
+.checkBoxField {
+  @include flex(center, center);
+  margin: 0 0 0 1rem;
+}
+.newFieldLabel {
+  display: block;
+}
+.fileInputLabel {
+  display: block;
+  background-color: $lightGreen;
+  width: 17rem;
+  height: 2.5rem;
+  @include size(17rem, 2.5rem);
+  margin-top: -10px;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  font-size: 1.3rem;
+  @include flex(center, center);
+}
+.checkBox {
+  @include size(1.1rem, 1.1rem);
+}
+.requiredText {
+  margin: 0 0.8rem;
+  font-size: 1.1rem;
+}
+.cancelIcon {
+  font-size: 1.3rem;
+}
+.mobileDisplay {
+  @include size(18rem, 28.5rem);
+  margin: 3rem 1rem 1rem;
+  border: 10px solid;
+  border-radius: 2rem;
+  padding: 2rem 0;
+  background-color: $white;
+  position: relative;
+  overflow: auto;
+}
+.mobileContainer {
+  height: 28rem;
+  @include flex("", center);
+  flex-direction: column;
+  overflow: auto;
+}
+.mobileContainer::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.mobileLabel {
+  display: block;
+  color: $darkBlue;
+}
+.mobileCamera {
+  @include size(5rem, 1rem);
+  border-radius: 2.5rem;
+  background-color: #000;
+  position: absolute;
+  top: 6px;
+}
+.required::after {
+  content: " *";
+  color: $errorColor;
+}
+.removeIcon {
+  @include size(1.5rem, 1.5rem);
+  position: absolute;
+  top: 5%;
+  right: 2.5%;
+  font-size: 1.5rem;
+  padding: 0;
+  border-radius: 50%;
+}
+.removeIcon:hover {
+  background-color: $lightGreen;
+}
+.mobileElements {
+  margin: 5px 0;
+  width: 15rem;
+}
+.mobileInputs {
+  @include size(14.5rem, 1.2rem);
+  margin: 3px 0;
+}
+.fitWidthSize {
+  width: 14.7rem;
+}
+.savedForms {
+  margin: 3rem;
+  position: relative;
+}
+.folderContainer {
+  @include size(7rem, 7rem);
+  background-color: $white;
+  box-shadow: 10px 10px 20px #6f6e6e;
+  border-radius: 8px;
+  @include flex(center, center);
+  position: relative;
+}
+.folderIcon {
+  font-size: 5.5rem;
+  padding: 0.5rem;
+  color: $lightGreen;
+  border-radius: 50%;
+  background-color: $formColor;
+  @include flex(center, center);
+}
+.addOptionContainer {
+  @include flex(space-around, center);
+  background-color: $lightGreen;
+  @include size(17rem, 2.5rem);
+  font-size: 1.4rem;
+  border-radius: 0 0 5px 5px;
+  margin: -10px 0 10px 0;
+  cursor: pointer;
+}
+.childOptions {
+  margin: 7px 0;
+  @include size(17.2rem, 1.8rem);
+  @include flex(space-around, center);
+}
+.childOptionInputs {
+  @include size(14rem, 1.2rem);
+}
+.removeChildButton {
+  font-size: 1.5rem;
+  padding: 5px 0 0 0;
+}
+.dropDown {
+  margin: 5px 0;
+  @include size(15rem, 1.5rem);
+}
+.imageField {
+  @include size(15rem, 8rem);
+  margin: 8px 0;
+  padding: 0;
+}
+.audioField {
+  @extend .imageField;
+  height: 3rem;
+}
+.videoField {
+  @extend .imageField;
+  height: 9.5rem;
+}
+.fileEditModal {
+  @include size(6rem, 6rem);
+  padding: 5px;
+  background-color: $white;
+  margin: 0;
+  box-shadow: 0 0 30px #a4a4a4;
+  position: absolute;
+  list-style-type: none;
+  top: 3rem;
+  left: 5rem;
+}
+.fileEditButton {
+  @include size(6rem, 1.5rem);
+  margin: 0;
+  padding: 4px 0;
+  background-color: $white;
+  text-align: center;
+  @include flex(center, center);
+}
+.fileEditButton:hover {
+  background-color: #e6e4e4;
+  cursor: pointer;
+}
+.turnFalse {
+  pointer-events: none;
+  user-select: none;
+}
+.errorMessage {
+  position: absolute;
+  bottom: 5.5rem;
+  font-style: italic;
+  color: $errorColor;
+}
+.error {
+  color: $errorColor;
+}
+.previewButton {
+  @include size(4rem, 1.2rem);
+  border: 0;
+  border-radius: 3px;
+  position: absolute;
+  bottom: 10px;
+  @include flex(center, center);
+  background-color: #ffd400;
+}
+.scaleMobile {
+  @include size(20rem, 33rem);
+  margin: 0;
+}
+.transparentBackground {
+  position: absolute;
+  @include size(100%, 100%);
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+.dynamicFormError {
+  width: 100%;
+  margin: -5px 0 0 0;
+  position: absolute;
+  color: $errorColor;
+  font-style: italic;
+}
+.optionsFieldError {
+  color: $errorColor;
+  font-style: italic;
+  margin: -5px 0 10px 5px;
+  font-size: 0.9rem;
+}
+.previewContainer {
+  height: 28rem;
+  margin: 0;
+  padding: 0;
+}
+.previewOpened {
+  position: absolute;
+  @include size(100%, 89%);
+  top: 5rem;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-color: $white;
+  @include flex(center, center);
+}
+.previewMobile {
+  height: 95%;
+}
